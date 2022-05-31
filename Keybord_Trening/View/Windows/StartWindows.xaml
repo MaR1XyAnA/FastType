@@ -1,0 +1,229 @@
+﻿<Window x:Class="Keybord_Trening.View.Windows.StartWindows"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Keybord_Trening.View.Windows"
+        mc:Ignorable="d"
+        Title="StartWindows" Height="900" Width="1600" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" Icon="/Resourse/images/icon.ico">
+<Grid Background="#55c5ff" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="7*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+
+
+        <!--#region Меню окна-->
+        <Grid x:Name="WindowMenuGrid"
+              Background="#0e509e"
+              Grid.ColumnSpan="3"
+              MouseLeftButtonDown="WindowMenuGrid_MouseLeftButtonDown">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Клавиатурный тренажёр FastTtpe"
+                       Foreground="White"
+                       FontSize="15"
+                       VerticalAlignment="Center"
+                       Margin="10 0 0 0"/>
+            <StackPanel Orientation="Horizontal"
+                        Grid.Column="1"
+                        HorizontalAlignment="Right">
+
+                <Button x:Name="MinimizeBtn"
+                        Content="─"
+                        Style="{StaticResource WindowButton}"
+                        Click="MinimizeBtn_Click"/>
+
+                <Button x:Name="MaximizeBtn"
+                        Content="◱"
+                        Style="{StaticResource WindowButton}"
+                        Click="MaximizeBtn_Click"/>
+
+                <Button x:Name="closeAppBtn"
+                        Content="✕"
+                        Style="{StaticResource WindowButton}"
+                        Click="closeAppBtn_Click"/>
+            </StackPanel>
+        </Grid>
+        <!--#endregion -->
+
+        <!--#region Меню приложения-->
+        <Border 
+              Grid.Column="1" 
+              Grid.Row="1" 
+              CornerRadius="12" 
+              BorderBrush="#2c93d4" 
+              BorderThickness="1 0 1 1" 
+              Margin="0 30 0 0">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#3bb5f6" Offset="0"/>
+                    <GradientStop Color="#32a7f5" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border.Effect>
+                <DropShadowEffect 
+                    Color="#2c93d4"
+                    ShadowDepth="2"
+                    BlurRadius="5"/>
+            </Border.Effect>
+
+            <Grid HorizontalAlignment="Left" Width="1242">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="1.6*"/>
+                </Grid.ColumnDefinitions>
+                
+                <!--#region Логотип-->
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                    <TextBlock Text="FastType"
+                           FontSize="48"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontWeight="SemiBold"
+                           FontFamily="Resourse/Fonts/#Flow Ext"/>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 -5 0 0">
+                        <Hyperlink Foreground="White" FontSize="18" Name="hyperlink123" Click="hyperlink123_Click">
+                            #WeSupportYou
+                        </Hyperlink>
+                    </TextBlock>
+                </StackPanel>
+                
+                
+                <!--#endregion-->
+
+                <!--#region Элементы меню-->
+                <StackPanel Orientation="Horizontal" Grid.Column="1">
+                    <Button x:Name="Trainer" Click="Trainer_Click" Content="Тренажёр" Style="{StaticResource MenuButton}"/>
+
+                    <Button Content="Tестирование" Style="{StaticResource MenuButton}" Name="TrainingBtn" Click="TrainingBtn_Click"/>
+
+                    <Button x:Name="Obychenie" Click="Obychenie_Click" Content="Обучение" Style="{StaticResource MenuButton}"/>
+
+                    <Button Content="Pейтинг" Style="{StaticResource MenuButton}" Name="Reintingbtn" Click="Reintingbtn_Click"/>
+                </StackPanel>
+                <!--#endregion-->
+
+                <!--#region Вход или регистрация-->
+                <StackPanel Orientation="Horizontal" Grid.Column="2" Visibility="Visible">
+                    <Polygon 
+                          Points="0 8 0 80"
+                          StrokeThickness="1"
+                          Stroke="#3fffffff"
+                        VerticalAlignment="Center"/>
+                    
+                    <Button 
+                        Content="Вход"
+                        Name="LoginBtn"
+                        Click="LoginBtn_Click"
+                        Style="{StaticResource MenuButton}"/>
+                    
+                    <TextBlock 
+                        Text=" или   "
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Foreground="#FFDADADA"
+                        FontSize="20"/>
+                    
+                    <Button 
+                        Style="{StaticResource MenuButton2}"
+                        x:Name="RegistrationBtn"
+                        Click="RegistrationBtn_Click"
+                        Content="Регистрация">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF0BA6FF" Offset="0"/>
+                                <GradientStop Color="#FF75C6FF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button> 
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Column="2" Visibility="Collapsed">
+                    <Polygon 
+                        Margin="0 0 10 0"
+                          Points="0 8 0 80"
+                          StrokeThickness="1"
+                          Stroke="#3fffffff"
+                        VerticalAlignment="Center"/>
+
+                    <Image
+                       Stretch="UniformToFill"
+                       Name="ProfileImage"
+                       Source="/Resourse/images/userpic.jpg" 
+                       Height="60"
+                       Width="60"/>
+
+                    <TextBlock 
+                        x:Name="UsetNameTB"
+                          Margin="10 0"
+                          FontSize="22"
+                          Foreground="White"
+                          VerticalAlignment="Center"
+                          HorizontalAlignment="Center"
+                          Text="Имя пользователя"
+                    />
+                    <Polygon 
+                         Margin="25 0 0 0"
+                         Points="0 8 0 80"
+                         StrokeThickness="1"
+                         Stroke="#3fffffff"
+                         VerticalAlignment="Center"
+                    />
+
+                    <Menu Margin="2 0 0 0" Height="25" Width="25" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <MenuItem>
+                            <MenuItem.Icon>
+                                <Image 
+                                    Source="/Resourse/images/triangle.png"
+                                    Height="20"
+                                    Width="20"
+                                />
+                            </MenuItem.Icon>
+                            <MenuItem Name="OpenProFill" Click="OpenProFill_Click">
+                                <MenuItem.Header>
+                                    <StackPanel>
+                                        <TextBlock Text="#Пользователь"/>
+                                        <TextBlock Text="Мой профиль"/>
+                                    </StackPanel>
+                                </MenuItem.Header>
+                            </MenuItem>
+                            <Separator/>
+                            <MenuItem Header="Редактировать профиль"/>
+                            <MenuItem Name="SignOut" Header="Выйти" Click="SignOut_Click"/>
+                        </MenuItem>
+                    </Menu>
+                    
+                    
+
+
+
+                </StackPanel>
+                <!--#endregion-->
+
+            </Grid>
+        </Border>
+        <!--#endregion -->
+
+        <!--#region Строничная новигация-->
+        <Frame 
+            NavigationUIVisibility ="Hidden"
+            x:Name="MainFrame"
+            Grid.Row="2"
+            Grid.Column="1"
+            Margin="0 30 0 0"/>
+        <!--#endregion -->
+    </Grid>
+</Window>

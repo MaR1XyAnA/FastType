@@ -1,0 +1,149 @@
+﻿<Page x:Class="Keybord_Trening.View.Pages.ProfilePageWin"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Keybord_Trening.View.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="690" d:DesignWidth="1244">
+
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="390"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Border CornerRadius="10" Background="#FFD0F5FE" Margin="2 5"/>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20 0 0 20">
+                <TextBlock Text="Результат обучения   " FontSize="20"/>
+                <TextBlock FontSize="20">
+                     <Hyperlink>Результаты тестов</Hyperlink>
+                </TextBlock>
+            </StackPanel>
+            
+            <Image
+                Source="/Resourse/images/userpic.jpg" 
+                Margin="15"/>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <TextBlock 
+                    Text="Имя пользователя"
+                    FontSize="35"
+                    Grid.Row="0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    Margin="5 0"/>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Image 
+                        Source="/Resourse/images/progress-profile.png"
+                        Grid.Column="0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Width="100"
+                        Height="100"
+                        Margin="40 0 0 0"
+                        />
+
+                    <StackPanel Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <TextBlock Text="Прогресс  " FontSize="30"/>
+                        <TextBlock Text="2 урока" FontSize="30" FontWeight="Bold" />
+                    </StackPanel>
+                    
+                    <Image 
+                        Source="/Resourse/images/speed-profile.png" 
+                        Grid.Column="1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Width="100"
+                        Height="100"
+                        Margin="40 0 0 0"
+                        />
+
+                    <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <TextBlock Text="Скорость  " FontSize="30"/>
+                        <TextBlock Text="0 Зн./Мин" FontSize="30" FontWeight="Bold"/>
+                    </StackPanel>
+                    
+                    <Image 
+                        Source="/Resourse/images/accuracy-profile.png"
+                         Grid.Column="2"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Width="100"
+                        Height="100"
+                        Margin="40 0 0 0"
+                        />
+
+                    <StackPanel Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <TextBlock Text="Точность  " FontSize="30"/>
+                        <TextBlock Text="0%" FontSize="30" FontWeight="Bold"/>
+                    </StackPanel>
+
+                </Grid>
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Border CornerRadius="10" Background="#FFD0F5FE" Grid.RowSpan="5" Margin="2" Height="250"/>
+            <TextBlock
+                Grid.Row="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Text="Ты сейчас проходишь урок"
+                FontSize="35"
+                />
+
+            <TextBlock
+                Margin="0 0 100 0"
+                Grid.Row="2"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Text="2"
+                FontSize="35"
+                />
+
+            <TextBlock
+                Grid.Row="2"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Text="    из  19"
+                FontSize="35"
+                />
+
+            <Button 
+                Grid.Row="3"
+                Style="{StaticResource ActionButton}" 
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Height="75"
+                Width="300"
+                FontSize="35"
+                Content="Продолжить"/>
+        </Grid>
+    </Grid>
+</Page>
